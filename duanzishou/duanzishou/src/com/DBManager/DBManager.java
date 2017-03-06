@@ -8,7 +8,7 @@ public class DBManager {
 	public static final String DRIVER = "com.mysql.jdbc.Driver";
 	public static final String USER = "root";
 	public static final String PASS = "110110";
-	public static final String URL = "jdbc:mysql://localhost:3306/jokebase";
+	public static final String URL = "jdbc:mysql://localhost:3306/jokebase?useUnicode=true&characterEncoding=UTF-8";
 
 	// 静态成员，支持单态模式
 	private static DBManager per = null;

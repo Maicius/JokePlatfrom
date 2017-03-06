@@ -44,7 +44,7 @@ public class RegisterDao extends DBManager {
 			System.out.println(resultSet);
 			while (resultSet.next()) {
 				string = resultSet.getString("userName");
-				System.out.println("string = " + string + "check = " + string.equals(userName));
+				System.out.println("string = " + string + " check = " + string.equals(userName));
 				if (string.equals(userName)) {
 					System.out.println("false!");
 					closeDB();

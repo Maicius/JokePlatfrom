@@ -15,15 +15,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
-import javax.websocket.Session;
-
-import org.apache.catalina.User;
-import org.apache.jasper.tagplugins.jstl.core.Out;
-import org.apache.taglibs.standard.lang.jstl.test.Bean1;
 
 import com.Service.PersonalService;
 import com.Service.RegisterService;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text;
 
 import UserVo.JokeVo;
 import UserVo.UserVoClass;

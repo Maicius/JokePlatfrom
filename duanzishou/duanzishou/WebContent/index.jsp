@@ -8,6 +8,32 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
 <script type="text/javascript" src="images/login.js"></script>
+    <script type="text/javascript">
+    function checkUser(){
+        var userName = document.getElementById("user").value;
+        var ajaxRequest;
+        if(window.XMLHttpRequest){
+            ajaxRequest = new XMLHttpRequest();
+        }else if(window.activeXObject){
+            ajaxRequest = new activeXObject("Microsoft.XMLHTTP");
+        }
+        if(ajaxRequest){
+
+            ajaxRequest.onreadystatechange = function(){
+                //alert("msg:"+msg+"  State:" + ajaxRequest.State + "  ajaxRequest.status:"+ajaxRequest.status);
+                if(ajaxRequest.readyState == 4 && ajaxRequest.status ==200){
+                    var msg =ajaxRequest.responseText;
+                    //alert(msg);
+                    alert(document.getElementById("userCue").innerHTML + "\n msg:" + msg);
+                    document.getElementById("userCue").innerHTML=msg;
+                }
+            }
+            ajaxRequest.open("post", "RegisterServlet?flag=checkUserName&userName=" + userName, true);
+            ajaxRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            ajaxRequest.send();
+        }
+    }
+    </script>
 <link href="css/login2.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -71,7 +97,7 @@
                 	
                     <label for="user"  class="input-tips2">用户名：</label>
                     <div class="inputOuter2">
-                        <input type="text" id="user" name="user" maxlength="16" class="inputstyle2"/>
+                        <input type="text" id="user" name="user" maxlength="16" onblur="checkUser()" class="inputstyle2"/>
                     </div>
                     
                 </li>
